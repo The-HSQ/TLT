@@ -4,9 +4,34 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { motion } from "framer-motion";
 import { loginSchema } from "../schema/loginSchema";
 import { signupSchema } from "../schema/signupSchema";
-import Header from "../Header";
-import Footer from "../Footer";
 import { Link } from "react-router-dom";
+import Footer from "../Footer";
+import { ArrowRight } from "lucide-react";
+
+// header for signup and login
+const Header = ({ btnTitle }) => {
+  return (
+    <header className=" relative flex justify-center items-center px-5 py-4 ">
+      <div className="container flex justify-between items-center">
+        {/* Left Section */}
+        <div className="flex items-center justify-center gap-10">
+          {/* Logo */}
+          <Link to='/'>
+            <h1 className="cursor-pointer text-4xl font-bold ">TLT</h1>
+          </Link>
+        </div>
+
+        {/* Right Section */}
+        <div className="flex items-center">
+          <Link to={btnTitle === 'Login' ? '/signup' : '/login'} className=" tracking-[1px] text-center flex justify-center items-center gap-2  bg-btn text-white px-6 py-2 rounded-full cursor-pointer transition-all duration-300 ease-in-out hover:bg-btnHover hover:-translate-y-[-1px] font-semibold ">
+            {btnTitle === 'Login' ? 'SignUp' : 'Login'}
+            <ArrowRight size={17} />
+          </Link>
+        </div>
+      </div>
+    </header>
+  )
+}
 
 const AuthLayout = ({ children, title }) => {
   useEffect(() => {
@@ -15,30 +40,33 @@ const AuthLayout = ({ children, title }) => {
 
   return (
     <>
-      <Header />
-      <div className=" w-full flex justify-center py-6 lg:py-20 2xl:py-64 ">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="w-full max-w-md bg-transparent sm:bg-white sm:shadow-2xl rounded-2xl sm:border border-gray-200 p-8"
-        >
-          <h2 className="text-3xl font-extrabold text-center text-white sm:text-gray-800 mb-4">
-            {title}
-          </h2>
-          <p className=" text-gray-100 sm:text-gray-600 text-sm text-center mb-8">
-            {title === "Login"
-              ? "Access your account to continue."
-              : "Create a new account to get started!"}
-          </p>
-          {children}
-        </motion.div>
+      <div className=" min-h-screen flex flex-col justify-between ">
+        <Header btnTitle={title} />
+        <div className=" w-full flex justify-center py-6 lg:py-20 2xl:py-64 ">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="w-full max-w-md bg-transparent sm:bg-white sm:shadow-2xl rounded-2xl sm:border border-gray-200 p-8"
+          >
+            <h2 className="text-3xl font-extrabold text-center text-white sm:text-gray-800 mb-4">
+              {title}
+            </h2>
+            <p className=" text-gray-100 sm:text-gray-600 text-sm text-center mb-8">
+              {title === "Login"
+                ? "Access your account to continue."
+                : "Create a new account to get started!"}
+            </p>
+            {children}
+          </motion.div>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   )
 };
 
+// InputStylish
 const StylishInput = ({ label, type, register, error }) => (
   <div className="relative">
     <input
@@ -46,7 +74,7 @@ const StylishInput = ({ label, type, register, error }) => (
       {...register}
       placeholder={label}
       autoComplete='true'
-      className={`peer w-full rounded-lg border-2 px-4 pt-6 pb-2 text-gray-900 placeholder-transparent placeholder:select-none focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm transition ${error ? "border-red-500" : "border-gray-300"
+      className={`peer w-full rounded-lg border-2 px-4 pt-6 pb-2 text-white sm:text-gray-900 placeholder-transparent placeholder:select-none focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm transition ${error ? "border-red-500" : "border-gray-300"
         }`}
       id={label}
     />
@@ -60,6 +88,7 @@ const StylishInput = ({ label, type, register, error }) => (
   </div>
 );
 
+// SignUpPage
 const LoginPage = () => {
   const {
     register,
@@ -82,10 +111,10 @@ const LoginPage = () => {
     <AuthLayout title="Login">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <StylishInput
-          label="Username"
-          type="text"
-          register={register("username")}
-          error={errors.username}
+          label="Email"
+          type="email"
+          register={register("email")}
+          error={errors.email}
         />
         <StylishInput
           label="Password"
@@ -93,8 +122,8 @@ const LoginPage = () => {
           register={register("password")}
           error={errors.password}
         />
-        <p className="text-center text-gray-400 mt-4">
-          Don't have an account? <Link to='/signup' className="text-blue-500">Sign up</Link>
+        <p className="text-center text-wrap text-gray-100 sm:text-gray-600 mt-4">
+          Don't have an account? <Link to='/signup' className="text-wrap text-blue-500">Sign up</Link>
         </p>
         <motion.button
           whileHover={{ scale: 0.99 }}
@@ -109,6 +138,7 @@ const LoginPage = () => {
   );
 };
 
+// SignUpPage
 const SignupPage = () => {
   const {
     register,
@@ -151,7 +181,7 @@ const SignupPage = () => {
           register={register("confirmPassword")}
           error={errors.confirmPassword}
         />
-        <p className="text-center text-gray-400 mt-4">
+        <p className=" text-center text-white sm:text-gray-600 mt-4">
           Already have an account? <Link to='/login' className="text-blue-500">Sign in</Link>
         </p>
         <motion.button
