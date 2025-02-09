@@ -67,7 +67,7 @@ export const AuthLayout = ({ children, title }) => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="w-full max-w-md bg-[#31305d] sm:bg-white sm:shadow-2xl rounded-2xl sm:border border-gray-200 p-8"
+            className="w-full max-w-md bg-[#6724C5] sm:bg-white sm:shadow-2xl rounded-2xl sm:border border-gray-200 p-8"
           >
             <h2 className="text-3xl font-extrabold text-center text-white sm:text-gray-800 mb-4">
               {title}
