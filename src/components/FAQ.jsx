@@ -48,21 +48,18 @@ const FAQ = () => {
     }, [activeIndex]);
 
     return (
-        <div className=" w-full flex flex-col mb-20 px-2 md:px-6 bg-transparent overflow-hidden justify-center items-center ">
-            <div className="flex justify-center items-center gap-2 px-4 py-1 border-b mb-4 mx-auto">
+        <div className=" bg-white mt-10 text-black w-full flex flex-col pb-20 px-2 md:px-6 overflow-hidden justify-center items-center ">
+            <div className="flex justify-center items-center gap-2 px-4 py-1 border-b border-gray-400 mb-4 mx-auto">
                 <Box strokeWidth={1.5} size={19} />
                 <h1>FAQ's</h1>
             </div>
 
             {/* Desktop */}
-            <div className=" hidden bg-gray-200 container text-black rounded md:flex ">
+            <div className=" hidden bg-gray-200 border border-gray-300 container text-black rounded md:flex ">
                 {/* Left: FAQ List */}
                 <div className=" w-[40%] lg:w-[50%] flex flex-col justify-center items-center ">
                     {faqItems.map((item, index) => (
                         <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            transition={{ duration: 1, ease: "linear" }}
                             onClick={() => setActiveIndex(index)}
                             key={index}
                             className={` w-full border-b border-gray-400 cursor-pointer last:rounded-bl ${activeIndex === index + 1 ? ' rounded-br-xl ' : ''} ${activeIndex === index - 1 ? ' border-t rounded-tr-xl ' : ''} ${activeIndex === index ? ' border-none bg-gray-200 ' : ' bg-white '} ${index === 0 ? ' rounded-tl ' : ''} ${index === 3 ? ' rounded-bl ' : ''} `}
@@ -109,7 +106,7 @@ const FAQ = () => {
             {/* Mobile */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:hidden gap-6 max-w-6xl mx-auto">
                 {faqItems.map((item, index) => (
-                    <div key={index} className="bg-white  rounded-lg shadow-lg">
+                    <div key={index} className="bg-white border border-gray-400 rounded-lg shadow-lg">
                         <div className=" flex justify-center items-center p-4 rounded-t-lg bg-gray-300 ">
                             <img src={item.image} alt={item.title} className=" object-center w-2xs h-56 border-2 border-white rounded-md " />
                         </div>

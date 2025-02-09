@@ -4,7 +4,7 @@ import BeforeFooterSection from './BeforeFooterSection'
 
 const BeforeFooter = () => {
     return (
-        <div className=' relative bg-black flex flex-col justify-center overflow-hidden py-24 sm:py-36 ' >
+        <div className=' relative bg-[#1C1C1C] flex flex-col justify-center overflow-hidden py-24 sm:py-36 ' >
             {/* Background Animated Grid - Positioned Properly */}
             <div className="absolute top-0 w-full opacity-100">
                 <AnimatedGrid />

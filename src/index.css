@@ -6,23 +6,40 @@
   --breakpoint-xs: 425px;
 
 
-  --color-activePage: #e48b17;
-  --color-btn: #705b99;
-  --color-btnHover: #e48b17;
-  --color-txtGradFrom: #e2189c;
-  --color-txtGradTo: #d315ed;
-  --color-bgGradVia: #86510c;
-  --color-background: #3d2a66;
+  --color-activePage: #6724C9;
+  --color-btn: #6724C5;
+  /* --color-btnHover: #e48b17; */
+  --color-txtGradFrom: #6F9CF2;
+  --color-txtGradTo: #f6ba97;
+  --color-bgGradVia: #FFD091;
+  --color-background: #FFFFFF;
+
+  /* KnowledgeBase */
+  --color-kCardBg: #fff;
+  --color-kBorderClr: #99A1AF;
+  --color-kTxtClr: #424C5D;
+  
+  /* Usage */
+  --color-STxtClr: #364153;
 
 }
 
 body {
-  background: #3d2a66;
-  color: white;
+  background: #FFFFFF;
+  color: black;
   font-family: "Poppins", serif;
 }
 
 .scroll-none::-webkit-scrollbar {
   display: none;
 }
+
+
+/* Usage Carosuel */
+.slick-track {
+  display: flex;
+  gap: 5px
+}
+
+
 

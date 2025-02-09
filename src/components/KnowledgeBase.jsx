@@ -24,15 +24,15 @@ const knowledgeData = [
 
 const Card = ({ image, icon, title, description }) => {
     return (
-        <div className="bg-white text-black flex flex-col gap-4 p-5 rounded-2xl shadow-lg border border-gray-700">
-            <div className=" border rounded flex justify-center items-center">
+        <div className="bg-kCardBg transition-all transform hover:scale-101 hover:cursor-pointer text-black flex flex-col gap-4 p-5 rounded-2xl shadow-lg border border-kBorderClr">
+            <div className=" border border-kBorderClr rounded flex justify-center items-center">
                 <img className='rounded w-full h-56 object-cover' src={image} alt={title} />
             </div>
             <div className="flex items-start gap-3">
                 <img className="w-6 h-10" src={icon} alt="icon" />
                 <div className="flex flex-col gap-1">
                     <h3 className="text-lg font-semibold">{title}</h3>
-                    <p className="text-gray-700 text-ellipsis line-clamp-3">{description}</p>
+                    <p className="text-kTxtClr text-ellipsis line-clamp-3">{description}</p>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@ const Card = ({ image, icon, title, description }) => {
 
 const KnowledgeBase = () => {
     return (
-        <div className=" flex flex-col justify-center items-center ">
+        <div className=" flex mt-10 flex-col justify-center items-center ">
             <div className="flex justify-center items-center gap-2 px-4 py-1 border-b mb-4 mx-auto">
                 <Box strokeWidth={1.5} size={19} />
                 <h1>Knowledge Base</h1>
@@ -49,19 +49,19 @@ const KnowledgeBase = () => {
 
             <div className=" container flex flex-col justify-center items-center lg:gap-5 ">
                 {/* top heading and top cards */}
-                <div className="grid grid-cols-1 md:grid-cols lg:grid-cols gap-0 justify-center items-center bg-transparent p-3 xs:p-10 xs:pb-0">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-10">
+                <div className="grid grid-cols-1 md:grid-cols lg:grid-cols gap-0 justify-center items-center bg-transparent p-3 xs:px-10 xs:pb-0">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-3">
                         Timeless Tails (TLT) AI Assists Enterprises, Government Entities, And Emerging Startups With
                     </h1>
                     <div className=" hidden md:grid lg:grid-cols-3 h-[370px] gap-5 w-full">
                         {/* Knowledge Base */}
-                        <div className=" bg-white text-black flex gap-2 p-6 rounded-2xl shadow-lg md:col-span-2">
+                        <div className=" hover:cursor-pointer transition-all transform hover:scale-101 border border-kBorderClr text-black flex gap-2 p-6 rounded-2xl shadow-lg md:col-span-2">
                             <div className=" w-[100%] lg:w-[60%] flex flex-col justify-center">
                                 <div className="flex items-start gap-3">
-                                    <img className="w-6 h-10" src="./knowledge/svg/star.svg" alt="icon" />
+                                    <img className="w-6 h-10 " src="./knowledge/svg/star.svg" alt="icon" />
                                     <div className="flex flex-col gap-1">
                                         <h3 className="text-lg font-semibold">Knowledge Base</h3>
-                                        <p className="text-gray-700">
+                                        <p className="text-kTxtClr">
                                             Utilize Timeless Tails Gen AI-powered knowledge base and cloud storage to access business intelligence anytime with natural language queries.
                                         </p>
                                     </div>
@@ -114,13 +114,13 @@ const KnowledgeBase = () => {
             {/* <div className=" md:hidden h-[460px] xs:h-[400px] sb:h-[370px] p-3 w-full mb-5 "> */}
             <div className=" md:hidden h-auto sb:h-[370px] p-3 w-full mb-5 ">
                 {/* Knowledge Base */}
-                <div className=" bg-white h-full text-black flex flex-col items-center sb:flex-row gap-3 sb:gap-6 p-6 rounded-2xl shadow-lg ">
+                <div className=" border border-kBorderClr bg-kCardBg h-full text-white flex flex-col items-center sb:flex-row gap-3 sb:gap-6 p-6 rounded-2xl shadow-lg ">
                     <div className=" w-full sb:w-[60%] flex flex-col justify-center">
                         <div className="flex items-start gap-3">
                             <img className="w-6 h-10" src="./knowledge/svg/star.svg" alt="icon" />
                             <div className="flex flex-col gap-1">
                                 <h3 className="text-lg font-semibold">Knowledge Base</h3>
-                                <p className="text-gray-700">
+                                <p className="text-kTxtClr">
                                     Utilize Timeless Tails Gen AI-powered knowledge base and cloud storage to access business intelligence anytime with natural language queries.
                                 </p>
                             </div>

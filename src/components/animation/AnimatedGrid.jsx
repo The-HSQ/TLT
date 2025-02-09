@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const AnimatedGrid = () => {
   return (
-    <div className="relative w-full h-[250px] overflow-hidden bg-black">
+    <div className="relative w-full h-[250px] overflow-hidden bg-[#1C1C1C]">
       <div className=" absolute -left-12 w-[110%] inset-0 bg-grid-two "></div>
       <motion.div
         className="absolute -left-6 rotate-5 -top-[50px] w-[110%] h-[450px] inset-0 bg-grid "

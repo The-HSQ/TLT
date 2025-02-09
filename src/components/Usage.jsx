@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ArrowLeft, ArrowRight, Box } from 'lucide-react';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const usageData = [
     {
@@ -40,43 +43,67 @@ const usageData = [
 ];
 
 const Usage = () => {
+    const sliderRef = useRef(null);
+    const sliderMobRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const containerRef = useRef(null);
-
-    const nextSlide = () => {
-        if (containerRef.current) {
-            setCurrentIndex((prevIndex) => {
-                const newIndex = prevIndex + 1;
-                return newIndex < usageData.length - 0 ? newIndex : prevIndex; // Prevent exceeding length
-            });
-        }
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : 0));
-    };
+    const [slidesToShow, setSlidesToShow] = useState(4);
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        if (currentIndex < usageData.length - 1) {
-            const interval = setInterval(() => {
-                nextSlide();
-            }, 3000);
+        const updateScreenWidth = () => {
+            setScreenWidth(window.innerWidth);
+        };
 
-            return () => clearInterval(interval);
+        window.addEventListener("resize", updateScreenWidth);
+        return () => {
+            window.removeEventListener("resize", updateScreenWidth);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (screenWidth < 540) {
+            setSlidesToShow(1);
+        } else if (screenWidth < 768) {
+            setSlidesToShow(2);
+        } else if (screenWidth < 1024) {
+            setSlidesToShow(3);
         } else {
-            const timeout = setTimeout(() => {
-                setCurrentIndex(0);
-            }, 3000);
-
-            return () => clearTimeout(timeout);
+            setSlidesToShow(4);
         }
-    }, [currentIndex]);
+    }, [screenWidth]);
+
+    useEffect(() => {
+        setCurrentIndex(0);
+        if (sliderRef.current) {
+            sliderRef.current.slickGoTo(0);
+        }
+        if (sliderMobRef.current) {
+            sliderMobRef.current.slickGoTo(0);
+        }
+    }, [slidesToShow]);
+
+    const settings = {
+        infinite: false,
+        speed: 500,
+        slidesToShow,
+        slidesToScroll: 1,
+        arrows: false,
+        afterChange: (index) => setCurrentIndex(index),
+        responsive: [
+            { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+            { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+            { breakpoint: 540, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+        ]
+    };
+
+    const isFirstSlide = currentIndex === 0;
+    const isLastSlide = currentIndex >= usageData.length - slidesToShow;
 
     return (
-        <div className="flex justify-center items-center sm:p-6 mb-10 bg-transparent">
+        <div className=" bg-white mt-10 text-black flex flex-col justify-center items-center sm:p-6 ">
             <div className="container flex flex-col justify-center">
                 {/* Header Section */}
-                <div className="flex justify-center items-center gap-2 px-4 py-1 border-b mb-4 mx-auto">
+                <div className="flex justify-center items-center gap-2 px-4 py-1 border-b border-gray-400 mb-4 mx-auto">
                     <Box strokeWidth={1.5} size={19} />
                     <h1>Usage</h1>
                 </div>
@@ -84,52 +111,95 @@ const Usage = () => {
                 {/* Description and Controls */}
                 <div className="w-full px-4 flex flex-col justify-center items-center text-center lg:flex-row lg:text-start lg:items-start gap-6 lg:gap-10 mx-auto">
                     <div className="w-full sm:w-[50%]">
-                        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-semibold text-white">
+                        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-semibold ">
                             AI Apps for every marketer, across every function
                         </h2>
                     </div>
                     <div className="w-full sm:w-[50%]">
-                        <p className="text-sm sm:text-base text-gray-300">
+                        <p className="text-sm sm:text-base text-STxtClr">
                             Timeless Tails (TLT) delivers the biggest library of AI Marketing Apps, with 90+ out-of-the-box Apps spanning every marketing function, and connected to marketing KPIs. Our purpose-built apps guide every marketer to success, right out of the gate.
                         </p>
-                        <div className="flex flex-col lg:flex-row gap-3 items-center justify-between mt-6">
-                            <button className="px-4 py-2 bg-btn cursor-pointer hover:bg-btnHover text-white rounded-lg">View All</button>
-                            <div className="flex gap-2">
-                                <button onClick={prevSlide} disabled={currentIndex === 0} className={`p-2 text-black bg-gray-200 rounded-full ${currentIndex === 0 ? ' opacity-50 cursor-not-allowed ' : ' cursor-pointer '} `}>
-                                    <ArrowLeft />
+                        <div className=" relative flex flex-col lg:flex-row gap-3 items-center justify-between mt-6">
+                            <button className="px-4 py-2 bg-btn cursor-pointer hover:translate-y-0.5 transition-all duration-300 ease-in-out text-white rounded-lg">View All</button>
+                            <div className=" hidden md:flex gap-2">
+                                <button
+                                    className={`p-2 text-black bg-gray-200 rounded-full ${isFirstSlide ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                                    onClick={() => sliderRef.current.slickPrev()}
+                                    disabled={isFirstSlide}
+                                >
+                                    <ArrowLeft size={20} />
                                 </button>
-                                <button onClick={nextSlide} disabled={currentIndex === usageData.length - 1} className={`p-2 text-black bg-gray-200 rounded-full ${currentIndex === usageData.length - 1 ? ' opacity-50 cursor-not-allowed ' : ' cursor-pointer '} `}>
-                                    <ArrowRight />
+                                <button
+                                    className={`p-2 text-black bg-gray-200 rounded-full ${isLastSlide ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                                    onClick={() => sliderRef.current.slickNext()}
+                                    disabled={isLastSlide}
+                                >
+                                    <ArrowRight size={20} />
+                                </button>
+                            </div>
+                            <div className=" md:hidden flex gap-2">
+                                <button
+                                    className={`p-2 text-black bg-gray-200 rounded-full ${isFirstSlide ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                                    onClick={() => sliderMobRef.current.slickPrev()}
+                                    disabled={isFirstSlide}
+                                >
+                                    <ArrowLeft size={20} />
+                                </button>
+                                <button
+                                    className={`p-2 text-black bg-gray-200 rounded-full ${isLastSlide ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                                    onClick={() => sliderMobRef.current.slickNext()}
+                                    disabled={isLastSlide}
+                                >
+                                    <ArrowRight size={20} />
                                 </button>
                             </div>
                         </div>
                     </div>
+                    {/* App Cards Carousel */}
                 </div>
-
-                {/* App Cards Carousel */}
-                <div ref={containerRef} className="overflow-hidden mt-4 p-4">
-                    <div className="flex transition-transform duration-300 " style={{ transform: `translateX(-${currentIndex * 272}px)` }}>
+                <div className=" hidden md:block h-auto w-full overflow-hidden mt-4 px-2 ">
+                    <Slider ref={sliderRef} {...settings}>
                         {usageData.map((app, index) => (
                             <div
                                 key={index}
-                                className="w-64 p-6 relative bg-white rounded-xl m-2 flex-shrink-0"
-                                style={{
-                                    boxShadow: '0 0 10px .5px black',
-                                }}>
+                                className=" group border border-gray-400 hover:cursor-pointer w-64 p-6 relative bg-[#E5E7EB] rounded-xl flex-shrink-0 mr-10 "
+                            >
                                 {app.popular && (
                                     <span className="absolute top-1 right-3 bg-purple-500 text-white text-xs px-2 py-1 rounded-md">POPULAR</span>
                                 )}
                                 <h3 className="text-lg font-semibold text-gray-800">{app.title}</h3>
                                 <p className="text-gray-600 mt-2 text-ellipsis line-clamp-2">{app.description}</p>
-                                <button className="mt-4 text-blue-600 font-medium flex justify-center items-center gap-2 ">Use This App <ArrowRight strokeWidth={1.5} size={19} /> </button>
+                                <button className=" mt-4 text-blue-600 font-medium flex justify-center items-center gap-2 group-hover:underline ">Use This App <ArrowRight strokeWidth={1.5} size={19} /> </button>
                             </div>
                         ))}
-                    </div>
+                    </Slider>
                 </div>
+            </div>
+
+            {/* Mob App Cards Carousel */}
+            <div className=" block md:hidden h-auto w-full overflow-hidden mt-4 px-2 ">
+                <Slider ref={sliderMobRef} {...settings}>
+                    {usageData.map((app, index) => (
+                        <div
+                            key={index}
+                            className=" group border border-gray-400 hover:cursor-pointer w-64 p-6 relative bg-[#E5E7EB] rounded-xl flex-shrink-0 mr-10 "
+                        >
+                            {app.popular && (
+                                <span className="absolute top-1 right-3 bg-purple-500 text-white text-xs px-2 py-1 rounded-md">POPULAR</span>
+                            )}
+                            <h3 className="text-lg font-semibold text-gray-800">{app.title}</h3>
+                            <p className="text-gray-600 mt-2 text-ellipsis line-clamp-2">{app.description}</p>
+                            <button className=" mt-4 text-blue-600 font-medium flex justify-center items-center gap-2 group-hover:underline ">Use This App <ArrowRight strokeWidth={1.5} size={19} /> </button>
+                        </div>
+                    ))}
+                </Slider>
             </div>
         </div>
     );
 };
 
 export default Usage;
+
+
+
 
