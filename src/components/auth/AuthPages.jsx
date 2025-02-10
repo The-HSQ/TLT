@@ -173,9 +173,7 @@ const LoginPage = () => {
           whileTap={{ scale: 0.98 }}
           type="submit"
           disabled={loading}
-          className={`w-full rounded-lg py-3 font-medium transition shadow-lg ${loading
-            ? "bg-gray-400 text-black cursor-not-allowed"
-            : "bg-indigo-600 text-white hover:bg-indigo-700"
+          className={`w-full rounded-lg py-3 font-medium transition shadow-lg ${loading ? "bg-gray-400 text-black cursor-not-allowed" : "bg-indigo-600 cursor-pointer text-white hover:bg-indigo-700"
             }`}
         >
           {loading ? "Loading..." : "Login"}

@@ -1,19 +1,20 @@
 import { ArrowRight, ChevronRight, Home } from 'lucide-react'
 import React, { useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import cards from './api/blog.json'
 
 const BlogDetails = () => {
+  const { slug } = useParams();
+  const location = useLocation();
+  const blog = cards.find((post) => post.slug === slug); // Find the blog post
+  
   function getRandomCards(data, count = 3) {
-    const shuffled = [...data].sort(() => 0.5 - Math.random()); // Shuffle the array
+    const filteredData = data.filter((item) => item.slug !== slug); // Exclude the current post
+    const shuffled = [...filteredData].sort(() => 0.5 - Math.random()); // Shuffle the array
     return shuffled.slice(0, count); // Pick the first 'count' elements
   }
-
   const selectedCards = getRandomCards(cards, 3);
-
-  const { slug } = useParams();
-  const blog = cards.find((post) => post.slug === slug); // Find the blog post
-
+  
   if (!blog) {
     return <p>Blog not found</p>; // Handle invalid slug case
   }
@@ -45,7 +46,7 @@ const BlogDetails = () => {
           {/* publish and author name */}
           <div className=' flex flex-col md:flex-row gap-2 md:gap-5 md:text-center text-[14px] text-balance text-gray-400 '>
             <p>Published on {blog.publishedDate}</p>
-            <p>{blog.author}</p>
+            <p>By the {blog.author}</p>
           </div>
           {/* image */}
           <img className=' w-full rounded-3xl border border-gray-300 ' src={blog.image} alt={blog.title} />

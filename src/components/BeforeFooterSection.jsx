@@ -114,7 +114,7 @@ const BeforeFooterSection = () => {
                         </div>
                     </div>
                     {/* hearSection */}
-                    <div className=' flex justify-center items-center sm:py-30 px-2 py-20 ' >
+                    <div className=' flex justify-center items-center sm:py-50 px-2 py-20 ' >
                         <div className=" container flex flex-col gap-6 items-center justify-center ">
                             <h1 className=' text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-normal flex flex-col items-center ' >
                                 Get started with <br /> TLT today
@@ -124,7 +124,7 @@ const BeforeFooterSection = () => {
                                 <Link to='/signup' className=" tracking-[1px] flex justify-center items-center sm:gap-3 gap-1 border text-black px-4 py-2 rounded cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-300 hover:-translate-y-[-1px] font-semibold ">
                                     Start Free Trial
                                 </Link>
-                                <Link to='/demo' className=" tracking-[1px] flex justify-center items-center sm:gap-3 gap-1 bg-[#705b99] text-white px-4 py-2 rounded cursor-pointer transition-all duration-300 ease-in-out hover:bg-[#4f4268] hover:-translate-y-[-1px] font-semibold ">
+                                <Link to='/demo' className=" tracking-[1px] flex justify-center items-center sm:gap-3 gap-1 bg-[#705b99] border border-[#705b99] hover:border-[#4f4268] text-white px-4 py-2 rounded cursor-pointer transition-all duration-300 ease-in-out hover:bg-[#4f4268] hover:-translate-y-[-1px] font-semibold ">
                                     Get A Demo
                                 </Link>
                             </div>

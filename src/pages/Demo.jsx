@@ -33,7 +33,7 @@ const Main_Container = () => {
                         <ul className="text-gray-600 list-disc list-inside mt-2">
                             <li>Use AI to create on-brand content wherever you work</li>
                             <li>Showcase practical AI use cases for your whole team</li>
-                            <li>Better understand Jasper’s capabilities & ROI</li>
+                            <li>Better understand TLT’s capabilities & ROI</li>
                         </ul>
                         <p className="mt-6 text-gray-500 text-sm">Trusted by 20% of the Fortune 500</p>
                     </div>
@@ -93,10 +93,10 @@ const Main_Container = () => {
                             </button>
                         </form>
                         <p className="text-xs text-gray-500 text-center mt-4">
-                            By submitting this form, you agree to Jasper’s <Link to="#" className="text-blue-500">Terms of Service</Link> and <Link to="#" className="text-blue-500">Privacy Policy</Link>.
+                            By submitting this form, you agree to TLT’s <Link to="#" className="text-blue-500">Terms of Service</Link> and <Link to="#" className="text-blue-500">Privacy Policy</Link>.
                         </p>
                         <p className="text-center mt-4 text-gray-700">
-                            Ready to get started with Jasper? <Link to="/signup" className="text-blue-500">Start Free Trial →</Link>
+                            Ready to get started with TLT? <Link to="/signup" className="text-blue-500">Start Free Trial →</Link>
                         </p>
                     </div>
                 </div>

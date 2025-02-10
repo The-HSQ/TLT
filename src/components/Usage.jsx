@@ -3,44 +3,8 @@ import { ArrowLeft, ArrowRight, Box } from 'lucide-react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
-const usageData = [
-    {
-        title: "Blog Post",
-        description: "Write long-form content that provides value, drives traffic, and enhances SEO",
-        popular: false,
-    },
-    {
-        title: "Product Description",
-        description: "Compose detailed descriptions that highlight the benefits and features of a product",
-        popular: true,
-    },
-    {
-        title: "Instagram Caption",
-        description: "Boost engagement with captions that perfectly accompany your Instagram images",
-        popular: true,
-    },
-    {
-        title: "Landing Page",
-        description: "Transform site traffic into valuable, engaging landing pages",
-        popular: false,
-    },
-    {
-        title: "Email Marketing",
-        description: "Craft compelling email campaigns to boost customer engagement and conversions",
-        popular: true,
-    },
-    {
-        title: "SEO Optimization",
-        description: "Enhance website visibility with AI-driven SEO strategies",
-        popular: false,
-    },
-    {
-        title: "Ad Copy Generator",
-        description: "Generate high-converting ad copy for multiple platforms",
-        popular: true,
-    },
-];
+import { Link } from "react-router-dom";
+import usageData from './../components/api/usage.json';
 
 const Usage = () => {
     const sliderRef = useRef(null);
@@ -120,7 +84,7 @@ const Usage = () => {
                             Timeless Tails (TLT) delivers the biggest library of AI Marketing Apps, with 90+ out-of-the-box Apps spanning every marketing function, and connected to marketing KPIs. Our purpose-built apps guide every marketer to success, right out of the gate.
                         </p>
                         <div className=" relative flex flex-col lg:flex-row gap-3 items-center justify-between mt-6">
-                            <button className="px-4 py-2 bg-btn cursor-pointer hover:translate-y-0.5 transition-all duration-300 ease-in-out text-white rounded-lg">View All</button>
+                            <Link to='/usage' className="px-4 py-2 bg-btn cursor-pointer hover:translate-y-0.5 transition-all duration-300 ease-in-out text-white rounded-lg">View All</Link>
                             <div className=" hidden md:flex gap-2">
                                 <button
                                     className={`p-2 text-black bg-gray-200 rounded-full ${isFirstSlide ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
@@ -160,7 +124,8 @@ const Usage = () => {
                 <div className=" hidden md:block h-auto w-full overflow-hidden mt-4 px-2 ">
                     <Slider ref={sliderRef} {...settings}>
                         {usageData.map((app, index) => (
-                            <div
+                            <Link
+                                to={`/usage/${app.slug}`}
                                 key={index}
                                 className=" group border border-gray-400 hover:cursor-pointer w-64 p-6 relative bg-[#E5E7EB] rounded-xl flex-shrink-0 mr-10 "
                             >
@@ -169,8 +134,8 @@ const Usage = () => {
                                 )}
                                 <h3 className="text-lg font-semibold text-gray-800">{app.title}</h3>
                                 <p className="text-gray-600 mt-2 text-ellipsis line-clamp-2">{app.description}</p>
-                                <button className=" mt-4 text-blue-600 font-medium flex justify-center items-center gap-2 group-hover:underline ">Use This App <ArrowRight strokeWidth={1.5} size={19} /> </button>
-                            </div>
+                                <button className=" mt-4 text-blue-600 font-medium flex justify-center items-center gap-2 group-hover:underline ">Use This App <ArrowRight strokeWidth={1.9} size={19} className="transition-transform duration-200 group-hover:scale-125 group-hover:stroke-[2.5] " /> </button>
+                            </Link>
                         ))}
                     </Slider>
                 </div>
