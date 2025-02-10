@@ -9,6 +9,7 @@ import Blog from "./pages/Blog";
 import Layout from "./components/routes/Layout";
 import Features from "./pages/Features";
 import Resources from "./pages/Resources";
+import Demo from "./pages/Demo";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Toaster />
       <Routes>
         {/* Auth Routes */}
+        <Route path="/demo" element={<Demo />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/otp" element={<OtpPage />} />

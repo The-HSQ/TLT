@@ -78,7 +78,7 @@ const Header = () => {
                         ) : (
                             <div className=" flex gap-2 ">
                                 <Link
-                                    to="/login"
+                                    to="/demo"
                                     className="tracking-[1px] text-sm border flex justify-center items-center gap-2 bg-transparent text-black px-2 py-2 rounded cursor-pointer transition-all duration-300 ease-in-out hover:translate-y-0.5 font-semibold"
                                 >
                                     Get Demo

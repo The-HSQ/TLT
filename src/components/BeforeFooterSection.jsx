@@ -1,9 +1,11 @@
-import { Bold, ChevronDown, CircleCheck, CircleHelp, Ellipsis, EllipsisVertical, FileText, Home, Image, Italic, Link, List, Logs, Megaphone, MessageCircle, Pen, Redo2, Shuffle, Star, Underline, Undo2 } from 'lucide-react'
+import { Bold, ChevronDown, CircleCheck, CircleHelp, Ellipsis, EllipsisVertical, FileText, Home, Image, Italic, List, Logs, Megaphone, MessageCircle, Pen, Redo2, Shuffle, Star, Underline, Undo2 } from 'lucide-react'
 import React from 'react'
 import FloatingCardImage from './animation/FloatingCardImage'
 import FloatingCardLock from './animation/FloatingCardLock'
 import FloatingCardMegaPhone from './animation/FloatingCardMegaPhone'
 import FloatingCardGlobe from './animation/FloatingCardGlobe'
+import { Link } from 'react-router-dom'
+
 
 const BeforeFooterSection = () => {
     return (
@@ -119,12 +121,12 @@ const BeforeFooterSection = () => {
                             </h1>
 
                             <div className="button sm:text-xl text-normal flex flex-col justify-center items-center sm:flex-row gap-2 sm:gap-4 ">
-                                <button className=" tracking-[1px] flex justify-center items-center sm:gap-3 gap-1 border text-black px-4 py-2 rounded cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-300 hover:-translate-y-[-1px] font-semibold ">
+                                <Link to='/signup' className=" tracking-[1px] flex justify-center items-center sm:gap-3 gap-1 border text-black px-4 py-2 rounded cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-300 hover:-translate-y-[-1px] font-semibold ">
                                     Start Free Trial
-                                </button>
-                                <button className=" tracking-[1px] flex justify-center items-center sm:gap-3 gap-1 bg-[#705b99] text-white px-4 py-2 rounded cursor-pointer transition-all duration-300 ease-in-out hover:bg-[#4f4268] hover:-translate-y-[-1px] font-semibold ">
+                                </Link>
+                                <Link to='/demo' className=" tracking-[1px] flex justify-center items-center sm:gap-3 gap-1 bg-[#705b99] text-white px-4 py-2 rounded cursor-pointer transition-all duration-300 ease-in-out hover:bg-[#4f4268] hover:-translate-y-[-1px] font-semibold ">
                                     Get A Demo
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
