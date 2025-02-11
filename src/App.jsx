@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { LoginPage, SignupPage } from "./components/auth/AuthPages";
-import Dash_Home from "./pages/Dashboard/Dash_Home";
 import { Toaster } from "react-hot-toast";
 import OtpPage from "./components/auth/OtpPage";
 import BlogDetailPage from "./pages/BlogDetailPage";
@@ -15,6 +14,13 @@ import StatDetailPage from "./pages/StatDetailPage";
 import UsagePage from "./pages/UsagePage";
 import StatPage from "./pages/StatPage";
 import UsageDetailPage from "./pages/UsageDetailPage";
+import DashHome from "./pages/Dashboard/DashHome";
+import Analytics from "./pages/Dashboard/Content";
+import Settings from "./pages/Dashboard/KnowledgeBase";
+import Content from "./pages/Dashboard/Content";
+import Chat from "./pages/Dashboard/Chat";
+import KnowledgeBase from "./pages/Dashboard/KnowledgeBase";
+import VoiceOver from "./pages/Dashboard/VoiceOver";
 
 function App() {
   return (
@@ -42,7 +48,11 @@ function App() {
         </Route>
 
         {/* Dashboard Route (No Layout) */}
-        <Route path="/dashhome" element={<Dash_Home />} />
+        <Route path="/dashboard" element={<DashHome />} />
+        <Route path="/content" element={<Content />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/knowledge-base" element={<KnowledgeBase />} />
+        <Route path="/voice-over" element={<VoiceOver />} />
       </Routes>
     </div>
   );
