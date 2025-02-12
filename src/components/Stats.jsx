@@ -31,21 +31,22 @@ const Stats = () => {
     };
 
     return (
-        <div className=" flex bg-white text-black flex-col justify-center items-center py-6 mt-4 ">
+        <div className=" flex bg-white text-black flex-col justify-center items-center px-[1rem] md:px-[2rem] lg:px-[2.5rem] py-6 mt-4 ">
             {stat ? '' :
-                <div className="flex justify-center items-center gap-2 px-4 py-1 border-b border-gray-400 mb-4 mx-auto">
+                <div className="flex justify-center items-center gap-2 py-1 border-b border-gray-400 mb-4 mx-auto">
                     <Box strokeWidth={1.5} size={19} />
                     <h1>Stats / Achievements</h1>
                 </div>
             }
-            <div className=" container flex flex-col items-center justify-center px-2 md:px-0 ">
+            {/* <div className=" container flex flex-col items-center justify-center px-2 md:px-0 "> */}
+            <div className=" custom-container flex flex-col items-center justify-center ">
                 {/* Heading */}
-                <div className=" w-full text-center md:text-start flex flex-col md:flex-row justify-center items-center gap-2 ">
-                    <div className=" w-[100%] md:w-[50%] flex justify-center ">
+                <div className=" w-full text-center md:text-start flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 ">
+                    <div className=" w-[100%] flex justify-center md:justify-start ">
                         <h2 className=" text-3xl md:text-4xl lg:text-5xl font-semibold">Real marketers, surreal results</h2>
                     </div>
-                    <div className=" w-[100%] md:w-[50%] flex flex-col justify-center items-center md:items-start ">
-                        <p className="mt-4 text-gray-800">Thrive alongside other members of the 125k+ strong Jasper community.</p>
+                    <div className=" w-[100%] flex flex-col justify-center items-center md:items-start ">
+                        <p className=" md:mt-4 text-gray-800">Thrive alongside other members of the 125k+ strong Jasper community.</p>
                         <Link to='/stats' className=" cursor-pointer transition-all duration-300 ease-in-out hover:translate-y-0.5 mt-3 px-6 py-2 border text-black rounded-lg">Explore Customer Stories</Link>
                     </div>
                 </div>

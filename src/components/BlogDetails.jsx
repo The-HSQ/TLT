@@ -24,8 +24,9 @@ const BlogDetails = () => {
   }, [location.pathname]);
 
   return (
-    <div className=' flex justify-center ' >
-      <div className="container flex flex-col gap-4 md:gap-6 items-center justify-center py-7 md:py-10 ">
+    <div className=' flex justify-center px-[1rem] md:px-[2rem] lg:px-[2.5rem] ' >
+      {/* <div className="container flex flex-col gap-4 md:gap-6 items-center justify-center py-7 md:py-10 "> */}
+      <div className=" custom-container flex flex-col gap-4 md:gap-6 items-center justify-center py-7 md:py-10 ">
         <div className=" w-full lg:w-[70%] text-black px-3 flex gap-4 md:gap-6 flex-col justify-center items-start md:items-center ">
           {/* home and blog icons */}
           <div className=' flex gap-3 justify-center items-center text-[#979591] '>

@@ -12,8 +12,9 @@ const HeroSection = () => {
     }, [isAuthenticated]);
 
     return (
-        <main className="bg-gradient-to-b via-bgGradVia to-[#7E45DB] flex flex-col items-center justify-start px-2 min-h-screen ">
-            <div className="container flex flex-col gap-6 items-center justify-center py-20 lg:py-32 2xl:py-46 ">
+        <main className="bg-gradient-to-b via-bgGradVia to-[#7E45DB] px-[1rem] md:px-[2rem] lg:px-[2.5rem] flex flex-col items-center justify-start min-h-screen ">
+            {/* <div className="container flex flex-col gap-6 items-center justify-center py-20 lg:py-32 2xl:py-46 "> */}
+            <div className=" custom-container flex flex-col gap-6 items-center justify-center py-20 lg:py-32 2xl:py-46 ">
                 <h1 className="text-center text-[#262626] md:text-7xl xs:text-5xl text-4xl font-medium flex flex-col ">
                     AI that writes
                     <span className="">

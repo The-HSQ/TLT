@@ -61,8 +61,9 @@ const Usage = () => {
     const isLastSlide = currentIndex >= usageData.length - slidesToShow;
 
     return (
-        <div className=" bg-white mt-10 text-black flex flex-col justify-center items-center sm:p-6 ">
-            <div className="container flex flex-col justify-center ">
+        <div className=" bg-white mt-10 text-black flex flex-col justify-center items-center px-[1rem] md:px-[2rem] lg:px-[2.5rem] sm:py-6 ">
+            {/* <div className=" container flex flex-col justify-center "> */}
+            <div className=" custom-container flex flex-col justify-center ">
                 {/* Header Section */}
                 <div className="flex justify-center items-center gap-2 px-2 py-1 border-b border-gray-400 mb-4 mx-auto">
                     <Box strokeWidth={1.5} size={19} />
@@ -118,7 +119,7 @@ const Usage = () => {
                     </div>
                     {/* App Cards Carousel */}
                 </div>
-                <div className=" hidden md:block h-auto w-full overflow-hidden mt-4 px-0 ">
+                <div className=" hidden md:block h-auto w-full overflow-hidden mt-4 ">
                     <Slider ref={sliderRef} {...settings}>
                         {usageData.map((app, index) => (
                             <Link
@@ -147,7 +148,7 @@ const Usage = () => {
             </div>
 
             {/* Mob App Cards Carousel */}
-            <div className=" block md:hidden h-auto w-full overflow-hidden mt-4 px-2 ">
+            <div className=" block md:hidden h-auto w-full overflow-hidden mt-4 ">
                 <Slider ref={sliderMobRef} {...settings}>
                     {usageData.map((app, index) => (
                         <Link

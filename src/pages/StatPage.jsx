@@ -9,7 +9,7 @@ const StatPage = () => {
   }, []);
 
   return (
-    <div className=' flex justify-center items-center gap-4 flex-col mt-10 mb-10 ' >
+    <div className=' flex justify-center items-center gap-4 flex-col mt-10 mb-10 px-[1rem] md:px-[2rem] lg:px-[2.5rem] ' >
       {/* home and blog icons */}
       <div className=' flex gap-3 justify-center items-center text-[#979591] '>
         <Link to='/' >
@@ -22,7 +22,8 @@ const StatPage = () => {
           <span className=' text-[13px] hover:cursor-pointer text-black '>Customer Stories</span>
         </Link>
       </div>
-      <div className=" container flex flex-col items-center justify-center gap-4 px-5 md:px-6 ">
+      {/* <div className=" container flex flex-col items-center justify-center gap-4 px-5 md:px-6 "> */}
+      <div className=" custom-container flex flex-col items-center justify-center gap-4 ">
         {/* heading */}
         <h1 className=' md:text-center text-3xl md:text-5xl text-balance font-semibold ' >Jasper helps 100,000+ customers transform how they work</h1>
         {/* description */}
@@ -37,7 +38,8 @@ const StatPage = () => {
         </div>
       </div>
 
-      <div className=" container flex flex-col items-center justify-center px-2 md:px-6 ">
+      {/* <div className=" container flex flex-col items-center justify-center px-2 md:px-6 "> */}
+      <div className=" custom-container flex flex-col items-center justify-center ">
         {/* Cards Desktop */}
         <div className=" grid text-black mt-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {customerStories.map((story) => (

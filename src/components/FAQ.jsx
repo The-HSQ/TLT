@@ -48,14 +48,15 @@ const FAQ = () => {
     }, [activeIndex]);
 
     return (
-        <div className=" bg-white mt-10 text-black w-full flex flex-col pb-20 px-2 md:px-6 overflow-hidden justify-center items-center ">
+        <div className=" bg-white mt-10 text-black w-full flex flex-col pb-20 px-[1rem] md:px-[2rem] lg:px-[2.5rem] overflow-hidden justify-center items-center ">
             <div className="flex justify-center items-center gap-2 px-4 py-1 border-b border-gray-400 mb-4 mx-auto">
                 <Box strokeWidth={1.5} size={19} />
                 <h1>FAQ's</h1>
             </div>
 
             {/* Desktop */}
-            <div className=" hidden bg-gray-200 border border-gray-300 container text-black rounded md:flex ">
+            {/* <div className=" hidden bg-gray-200 border border-gray-300 container text-black rounded md:flex "> */}
+            <div className=" hidden bg-gray-200 border border-gray-300 custom-container text-black rounded md:flex ">
                 {/* Left: FAQ List */}
                 <div className=" w-[40%] lg:w-[50%] flex flex-col justify-center items-center ">
                     {faqItems.map((item, index) => (

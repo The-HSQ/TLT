@@ -44,8 +44,9 @@ const Header = () => {
     return (
         // <header className=" flex flex-col ">
         <header className="fixed top-0 left-0 w-full z-50 bg-white ">
-            <div className=" flex border-b border-gray-300 justify-center items-center px-5 py-4">
-                <div className="container flex justify-between items-center">
+            <div className=" flex border-b border-gray-300 justify-center items-center px-[1rem] md:px-[2rem] lg:px-[2.5rem] py-4">
+                {/* <div className=" container flex justify-between items-center"> */}
+                <div className=" custom-container flex justify-between items-center">
                     {/* Left Section */}
                     <div className="flex items-center gap-10">
                         <Link to="/">
@@ -94,10 +95,10 @@ const Header = () => {
 
                         {/* Mobile Menu Toggle */}
                         <button
-                            className="md:hidden cursor-pointer ml-4 text-[#9A9AB3]"
+                            className="md:hidden cursor-pointer ml-4 rounded-lg bg-black text-white"
                             onClick={() => setIsOpen(!isOpen)}
                         >
-                            {isOpen ? <X size={40} /> : <Menu size={40} />}
+                            {isOpen ? <X size={35} /> : <Menu size={35} />}
                         </button>
                     </div>
                 </div>

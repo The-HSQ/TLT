@@ -15,7 +15,8 @@ import { login, signup } from "../../features/authSlice";
 const Header = ({ btnTitle }) => {
   return (
     <header className="fixed top-0 left-0 bg-white z-[100000] w-full flex border-b border-gray-300 justify-center items-center px-5 py-4">
-      <div className="container flex justify-between items-center">
+      {/* <div className="container flex justify-between items-center"> */}
+      <div className=" custom-container flex justify-between items-center">
         {/* Logo */}
         <Link to="/">
           <h1 className="cursor-pointer text-4xl font-bold">TLT</h1>

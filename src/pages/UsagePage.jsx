@@ -25,7 +25,8 @@ const UsagePage = () => {
                 </Link>
             </div>
             {isAuthenticated ? "" :
-                <div className=" container flex flex-col items-center justify-center gap-4 px-5 md:px-6 ">
+                // <div className=" container flex flex-col items-center justify-center gap-4 px-5 md:px-6 ">
+                <div className=" custom-container flex flex-col items-center justify-center gap-4 px-5 md:px-6 ">
                     {/* heading */}
                     <h1 className=' md:text-center text-3xl md:text-5xl text-balance font-semibold ' >Jasper helps 100,000+ customers transform how they work</h1>
                     {/* description */}
@@ -40,7 +41,8 @@ const UsagePage = () => {
                     </div>
                 </div>}
 
-            <div className=" container flex flex-col items-center justify-center px-2 md:px-0 ">
+            {/* <div className=" container flex flex-col items-center justify-center px-2 md:px-0 "> */}
+            <div className=" custom-container flex flex-col items-center justify-center px-2 md:px-0 ">
                 {/* Cards Desktop */}
                 <div className=" grid text-black mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {usageData.map((app, index) => (

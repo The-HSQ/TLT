@@ -25,7 +25,8 @@ const KnowledgeDetails = () => {
 
     return (
         <div className=' flex justify-center ' >
-            <div className="container flex flex-col gap-4 md:gap-6 items-center justify-center py-7 md:py-10 ">
+            {/* <div className="container flex flex-col gap-4 md:gap-6 items-center justify-center py-7 md:py-10 "> */}
+            <div className=" custom-container flex flex-col gap-4 md:gap-6 items-center justify-center py-7 md:py-10 ">
                 <div className=" w-full lg:w-[70%] text-black px-3 flex gap-4 md:gap-6 flex-col justify-center items-start md:items-center ">
                     {/* home and knowledge icons */}
                     <div className=' flex justify-center items-center text-[#979591] '>

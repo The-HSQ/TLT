@@ -5,7 +5,8 @@ import Footer from "../components/Footer";
 const Header = () => {
     return (
         <header className="fixed top-0 left-0 bg-white z-[100000] w-full flex border-b border-gray-300 justify-center items-center px-5 py-4">
-            <div className="container flex justify-between items-center">
+            {/* <div className="container flex justify-between items-center"> */}
+            <div className=" custom-container flex justify-between items-center">
                 {/* Logo */}
                 <Link to="/">
                     <h1 className="cursor-pointer text-4xl font-bold">TLT</h1>
@@ -19,7 +20,8 @@ const Main_Container = () => {
     return (
         <div className=" flex flex-col justify-center items-center ">
 
-            <div className=" container flex flex-col justify-between items-center ">
+            {/* <div className=" container flex flex-col justify-between items-center "> */}
+            <div className=" custom-container flex flex-col justify-between items-center ">
 
                 <div className=" mt-[70px] flex flex-col lg:flex-row items-center justify-between p-5 lg:px-5 lg:py-20 bg-white ">
                     {/* Left Content */}

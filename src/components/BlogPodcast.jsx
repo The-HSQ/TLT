@@ -25,15 +25,16 @@ const BlogPodcast = () => {
     }, [currentPage, location.pathname]);
 
     return (
-        <div className="flex mt-10 bg-white text-black justify-center items-center">
-            <div className="container">
-                <div className="w-fit flex justify-center items-center gap-2 px-4 py-1 border-b border-gray-400 mx-auto">
+        <div className="flex mt-10 bg-white text-black justify-center px-[1rem] md:px-[2rem] lg:px-[2.5rem] items-center">
+            {/* <div className="container"> */}
+            <div className=" custom-container ">
+                <div className="w-fit flex justify-center items-center gap-2 py-1 border-b border-gray-400 mx-auto">
                     <Box strokeWidth={1.5} size={19} />
                     <h1>Blog / Podcast</h1>
                 </div>
 
                 {/* Blog Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2 pt-6 md:px-0 ">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-6 ">
                     {displayedPosts.map((card, index) => (
                         <Link to={`/blog/${card.slug}`} key={index} className="border border-gray-400 hover:cursor-pointer group p-4 bg-white text-black rounded-2xl shadow-md transition-all transform hover:scale-101 hover:shadow-lg">
                             <img src={card.image} alt={card.title} className=" mb-4 w-full h-48 md:h-60 object-cover " />

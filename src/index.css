@@ -18,7 +18,7 @@
   --color-kCardBg: #fff;
   --color-kBorderClr: #99A1AF;
   --color-kTxtClr: #424C5D;
-  
+
   /* Usage */
   --color-STxtClr: #364153;
 
@@ -41,5 +41,29 @@ body {
   gap: 10px
 }
 
+.custom-container {
+  width: 100%;
+  /* margin: 0 16px; */
 
-
+  @media (width >= 425px) {
+      /* max-width: 425px; */
+  }
+  @media (width >= 650px) {
+      /* max-width: 650px; */
+  }
+  @media (width >= 40rem /* 640px */) {
+      /* max-width: 40rem 640px; */
+  }
+  @media (width >= 48rem /* 768px */) {
+      /* max-width: 48rem 768px; */
+  }
+  @media (width >= 64rem /* 1024px */) {
+      /* max-width: 64rem 1024px; */
+  }
+  @media (width >= 80rem /* 1280px */) {
+      /* max-width: 80rem 1280px; */
+  }
+  @media (width >= 88rem /* 1424px */) {
+      max-width: 88rem /* 1424px */;
+  }
+}

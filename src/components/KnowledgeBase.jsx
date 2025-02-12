@@ -133,7 +133,8 @@ const KnowledgeBase = () => {
                 <Box strokeWidth={1.5} size={19} />
                 <h1>Knowledge Base</h1>
             </div>
-            <div className=" container flex flex-col justify-center items-center lg:gap-5 ">
+            {/* <div className=" container flex flex-col justify-center items-center lg:gap-5 "> */}
+            <div className=" custom-container flex flex-col justify-center items-center lg:gap-5 ">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-center items-center bg-transparent p-3 xs:px-10 xs:py-5 ">
                     {knowledgeData.map((data, index) => (
                         <Link key={index} to={`/knowledge/${data.slug}`} className="bg-kCardBg transition-all transform hover:scale-101 hover:cursor-pointer text-black flex flex-col gap-4 p-5 rounded-2xl shadow-lg border border-kBorderClr">

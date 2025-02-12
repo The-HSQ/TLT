@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <footer className=' bg-[#1C1C1C] text-white flex justify-center items-center px-5 py-4 ' >
-            <div className="container flex flex-col md:flex-col md:justify-between md:items-center gap-4 ">
+        <footer className=' bg-[#1C1C1C] text-white flex justify-center items-center py-4 px-[1rem] md:px-[2rem] lg:px-[2.5rem] ' >
+            {/* <div className="container flex flex-col md:flex-col md:justify-between md:items-center gap-4 "> */}
+            <div className=" custom-container flex flex-col md:flex-col md:justify-between md:items-center gap-4 ">
                 {/* Top Side */}
                 <div className=" w-full flex flex-col md:flex-row gap-10 py-6 ">
                     {/* Left */}

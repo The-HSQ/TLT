@@ -9,11 +9,12 @@ import { Link } from 'react-router-dom'
 
 const BeforeFooterSection = () => {
     return (
-        <div className=' container flex flex-col relative justify-center px-4 hover:cursor-default items-center ' >
+        // <div className=' container flex flex-col relative justify-center px-4 hover:cursor-default items-center ' >
+        <div className=' custom-container flex flex-col relative justify-center px-[1rem] sm:px-[4rem] lg:px-[1rem] hover:cursor-default items-center ' >
             <div className="absolute top-20 left-0 z-100 ">
                 <FloatingCardImage />
             </div>
-            <div className="absolute bottom-20 -right-6 z-100 ">
+            <div className="absolute bottom-20 right-0 z-100 ">
                 <FloatingCardLock />
             </div>
             <div className="absolute -top-10 md:-top-12 right-10 md:right-44 z-40 opacity-95 ">
@@ -114,9 +115,10 @@ const BeforeFooterSection = () => {
                         </div>
                     </div>
                     {/* hearSection */}
-                    <div className=' flex justify-center items-center sm:py-50 px-2 py-20 ' >
-                        <div className=" container flex flex-col gap-6 items-center justify-center ">
-                            <h1 className=' text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-normal flex flex-col items-center ' >
+                    <div className=' flex justify-center items-center lg:py-50 md:py-24 px-2 py-20 ' >
+                        {/* <div className=" container flex flex-col gap-6 items-center justify-center "> */}
+                        <div className=" custom-container flex flex-col gap-6 items-center justify-center ">
+                            <h1 className=' text-center lg:text-7xl md:text-5xl text-balance sm:text-4xl text-3xl font-medium flex flex-col items-center ' >
                                 Get started with <br /> TLT today
                             </h1>
 
