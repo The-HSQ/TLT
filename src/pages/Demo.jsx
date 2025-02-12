@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 const Header = () => {
     return (
-        <header className="fixed top-0 left-0 bg-white z-[100000] w-full flex border-b border-gray-300 justify-center items-center px-5 py-4">
+        <header className="fixed top-0 left-0 bg-white z-[100000] w-full flex border-b border-gray-300 justify-center items-center px-[1rem] md:px-[2rem] lg:px-[2.5rem] py-4">
             {/* <div className="container flex justify-between items-center"> */}
             <div className=" custom-container flex justify-between items-center">
                 {/* Logo */}
@@ -23,7 +23,7 @@ const Main_Container = () => {
             {/* <div className=" container flex flex-col justify-between items-center "> */}
             <div className=" custom-container flex flex-col justify-between items-center ">
 
-                <div className=" mt-[70px] flex flex-col lg:flex-row items-center justify-between p-5 lg:px-5 lg:py-20 bg-white ">
+                <div className=" mt-[70px] flex flex-col lg:flex-row items-center justify-between py-5 px-[1rem] md:px-[2rem] lg:px-[2.5rem] lg:py-20 bg-white ">
                     {/* Left Content */}
                     <div className="lg:w-1/2 text-left mb-10 lg:mb-0">
                         <h1 className="text-4xl text-balance lg:text-5xl font-bold text-gray-900">

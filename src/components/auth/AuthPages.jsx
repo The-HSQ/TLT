@@ -14,7 +14,7 @@ import { login, signup } from "../../features/authSlice";
 // Header Component for Login/Signup
 const Header = ({ btnTitle }) => {
   return (
-    <header className="fixed top-0 left-0 bg-white z-[100000] w-full flex border-b border-gray-300 justify-center items-center px-5 py-4">
+    <header className="fixed top-0 left-0 bg-white z-[100000] w-full flex border-b border-gray-300 justify-center items-center px-[1rem] md:px-[2rem] lg:px-[2.5rem] py-4">
       {/* <div className="container flex justify-between items-center"> */}
       <div className=" custom-container flex justify-between items-center">
         {/* Logo */}
