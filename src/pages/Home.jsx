@@ -14,7 +14,7 @@ const Home = () => {
     return (
         <>
             <HeroSection />
-            <KnowledgeBase />
+            {/* <KnowledgeBase /> */}
             <Stats />
             <BlogPodcast />
             <Usage />

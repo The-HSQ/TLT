@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronRight, Home } from 'lucide-react'
+import { ArrowRight, ChevronRight, Home, List } from 'lucide-react'
 import React, { useEffect } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import usageData from './api/usage.json'
@@ -72,19 +72,27 @@ const UsageDetails = () => {
                 {/* More usage */}
                 <div className="">
                     <h2 className=' text-center text-balance text-3xl font-medium ' >More from the TLT usage:</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2 pt-6 md:px-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2 pt-6 md:px-0">
                         {selectedCards.map((app, index) => (
                             <Link
                                 to={`/usage/${app.slug}`}
                                 key={index}
-                                className=" group border border-gray-400 hover:cursor-pointer w-full p-6 relative bg-[#E5E7EB] rounded-xl flex-shrink-0 mr-10 "
+                                className=" group border border-gray-100 hover:cursor-pointer w-full p-6 relative bg-[#F9F9F9] rounded-xl flex-shrink-0 flex flex-col items-stretch "
                             >
-                                {app.popular && (
-                                    <span className="absolute top-1 right-3 bg-purple-500 text-white text-xs px-2 py-1 rounded-md">POPULAR</span>
-                                )}
-                                <h3 className="text-lg font-semibold text-gray-800">{app.title}</h3>
-                                <p className="text-gray-600 mt-2 text-ellipsis line-clamp-2">{app.description}</p>
-                                <button className=" mt-4 text-blue-600 font-medium flex justify-center items-center gap-2 group-hover:underline ">Use This App <ArrowRight strokeWidth={1.9} size={19} className="transition-transform duration-200 group-hover:scale-125 group-hover:stroke-[2.5] " /> </button>
+                                <div className=" mb-3 flex justify-between items-center ">
+                                    <span className=" flex bg-[#D3E5F0] text-black px-2 py-2 rounded-full"><List strokeWidth={1.5} size={30} /></span>
+                                    <div className=" flex gap-2 justify-center items-center ">
+                                        <span className=" bg-[#C1F1BA] text-[#005930] text-sm font-medium px-2 py-1 rounded-md">NEW</span>
+                                        <span className=" bg-[#E9DAFF] text-[#5816B8] text-sm font-medium px-2 py-1 rounded-md">POPULAR</span>
+                                    </div>
+                                </div>
+                                <h3 className="text-xl font-semibold text-gray-800">{app.title}</h3>
+                                <p className="text-gray-600 mt-1 text-ellipsis line-clamp-2">{app.description}</p>
+                                <button className="mt-4 relative w-fit text-gray-800 font-medium text-sm flex justify-start items-center gap-2 hover:cursor-pointer ">
+                                    Use This App
+                                    <ArrowRight strokeWidth={1.9} size={19} className="transition-transform duration-400 group-hover:translate-x-2" />
+                                    <span className="absolute -bottom-0.5 left-0 w-[80%] h-[1px] group-hover:bg-gray-400 transition-all duration-400 group-hover:w-full"></span>
+                                </button>
                             </Link>
                         ))}
                     </div>

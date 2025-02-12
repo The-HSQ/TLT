@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ArrowLeft, ArrowRight, Box } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Box, List } from 'lucide-react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -25,14 +25,12 @@ const Usage = () => {
     }, []);
 
     useEffect(() => {
-        if (screenWidth < 540) {
+        if (screenWidth < 580) {
             setSlidesToShow(1);
-        } else if (screenWidth < 768) {
-            setSlidesToShow(2);
         } else if (screenWidth < 1024) {
-            setSlidesToShow(3);
+            setSlidesToShow(2);
         } else {
-            setSlidesToShow(4);
+            setSlidesToShow(3);
         }
     }, [screenWidth]);
 
@@ -47,16 +45,15 @@ const Usage = () => {
     }, [slidesToShow]);
 
     const settings = {
-        infinite: false,
         speed: 500,
         slidesToShow,
         slidesToScroll: 1,
+        initialSlide: 3,
         arrows: false,
         afterChange: (index) => setCurrentIndex(index),
         responsive: [
-            { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } },
-            { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 1 } },
-            { breakpoint: 540, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+            { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+            { breakpoint: 580, settings: { slidesToShow: 1, slidesToScroll: 1 } }
         ]
     };
 
@@ -65,15 +62,15 @@ const Usage = () => {
 
     return (
         <div className=" bg-white mt-10 text-black flex flex-col justify-center items-center sm:p-6 ">
-            <div className="container flex flex-col justify-center">
+            <div className="container flex flex-col justify-center ">
                 {/* Header Section */}
-                <div className="flex justify-center items-center gap-2 px-4 py-1 border-b border-gray-400 mb-4 mx-auto">
+                <div className="flex justify-center items-center gap-2 px-2 py-1 border-b border-gray-400 mb-4 mx-auto">
                     <Box strokeWidth={1.5} size={19} />
                     <h1>Usage</h1>
                 </div>
 
                 {/* Description and Controls */}
-                <div className="w-full px-4 flex flex-col justify-center items-center text-center lg:flex-row lg:text-start lg:items-start gap-6 lg:gap-10 mx-auto">
+                <div className="w-full px-0 flex flex-col justify-center items-center text-center lg:flex-row lg:text-start lg:items-start gap-6 lg:gap-10 mx-auto">
                     <div className="w-full sm:w-[50%]">
                         <h2 className="text-2xl sm:text-4xl lg:text-5xl font-semibold ">
                             AI Apps for every marketer, across every function
@@ -121,20 +118,28 @@ const Usage = () => {
                     </div>
                     {/* App Cards Carousel */}
                 </div>
-                <div className=" hidden md:block h-auto w-full overflow-hidden mt-4 px-2 ">
+                <div className=" hidden md:block h-auto w-full overflow-hidden mt-4 px-0 ">
                     <Slider ref={sliderRef} {...settings}>
                         {usageData.map((app, index) => (
                             <Link
                                 to={`/usage/${app.slug}`}
                                 key={index}
-                                className=" group border border-gray-400 hover:cursor-pointer w-64 p-6 relative bg-[#E5E7EB] rounded-xl flex-shrink-0 mr-10 "
+                                className=" group border border-gray-100 hover:cursor-pointer w-64 p-6 relative bg-[#F9F9F9] rounded-xl flex-shrink-0 flex flex-col items-stretch "
                             >
-                                {app.popular && (
-                                    <span className="absolute top-1 right-3 bg-purple-500 text-white text-xs px-2 py-1 rounded-md">POPULAR</span>
-                                )}
-                                <h3 className="text-lg font-semibold text-gray-800">{app.title}</h3>
-                                <p className="text-gray-600 mt-2 text-ellipsis line-clamp-2">{app.description}</p>
-                                <button className=" mt-4 text-blue-600 font-medium flex justify-center items-center gap-2 group-hover:underline ">Use This App <ArrowRight strokeWidth={1.9} size={19} className="transition-transform duration-200 group-hover:scale-125 group-hover:stroke-[2.5] " /> </button>
+                                <div className=" mb-3 flex justify-between items-center ">
+                                    <span className=" flex bg-[#D3E5F0] text-black px-2 py-2 rounded-full"><List strokeWidth={1.5} size={30} /></span>
+                                    <div className=" flex gap-2 justify-center items-center ">
+                                        <span className=" bg-[#C1F1BA] text-[#005930] text-sm font-medium px-2 py-1 rounded-md">NEW</span>
+                                        <span className=" bg-[#E9DAFF] text-[#5816B8] text-sm font-medium px-2 py-1 rounded-md">POPULAR</span>
+                                    </div>
+                                </div>
+                                <h3 className="text-xl font-semibold text-gray-800">{app.title}</h3>
+                                <p className="text-gray-600 mt-1 text-ellipsis line-clamp-2">{app.description}</p>
+                                <button className="mt-4 relative text-gray-800 font-medium text-sm flex justify-center items-center gap-2 hover:cursor-pointer ">
+                                    Use This App
+                                    <ArrowRight strokeWidth={1.9} size={19} className="transition-transform duration-400 group-hover:translate-x-2" />
+                                    <span className="absolute -bottom-0.5 left-0 w-[80%] h-[1px] group-hover:bg-gray-400 transition-all duration-400 group-hover:w-full"></span>
+                                </button>
                             </Link>
                         ))}
                     </Slider>
@@ -145,17 +150,26 @@ const Usage = () => {
             <div className=" block md:hidden h-auto w-full overflow-hidden mt-4 px-2 ">
                 <Slider ref={sliderMobRef} {...settings}>
                     {usageData.map((app, index) => (
-                        <div
+                        <Link
+                            to={`/usage/${app.slug}`}
                             key={index}
-                            className=" group border border-gray-400 hover:cursor-pointer w-64 p-6 relative bg-[#E5E7EB] rounded-xl flex-shrink-0 mr-10 "
+                            className=" group border border-gray-100 hover:cursor-pointer w-64 p-6 relative bg-[#F9F9F9] rounded-xl flex-shrink-0 flex flex-col items-stretch "
                         >
-                            {app.popular && (
-                                <span className="absolute top-1 right-3 bg-purple-500 text-white text-xs px-2 py-1 rounded-md">POPULAR</span>
-                            )}
-                            <h3 className="text-lg font-semibold text-gray-800">{app.title}</h3>
-                            <p className="text-gray-600 mt-2 text-ellipsis line-clamp-2">{app.description}</p>
-                            <button className=" mt-4 text-blue-600 font-medium flex justify-center items-center gap-2 group-hover:underline ">Use This App <ArrowRight strokeWidth={1.5} size={19} /> </button>
-                        </div>
+                            <div className=" mb-3 flex justify-between items-center ">
+                                <span className=" flex bg-[#D3E5F0] text-black px-2 py-2 rounded-full"><List strokeWidth={1.5} size={30} /></span>
+                                <div className=" flex gap-2 justify-center items-center ">
+                                    <span className=" bg-[#C1F1BA] text-[#005930] text-sm font-medium px-2 py-1 rounded-md">NEW</span>
+                                    <span className=" bg-[#E9DAFF] text-[#5816B8] text-sm font-medium px-2 py-1 rounded-md">POPULAR</span>
+                                </div>
+                            </div>
+                            <h3 className="text-xl font-semibold text-gray-800">{app.title}</h3>
+                            <p className="text-gray-600 mt-1 text-ellipsis line-clamp-2">{app.description}</p>
+                            <button className="mt-4 relative text-gray-800 font-medium text-sm flex justify-center items-center gap-2 hover:cursor-pointer ">
+                                Use This App
+                                <ArrowRight strokeWidth={1.9} size={19} className="transition-transform duration-400 group-hover:translate-x-2" />
+                                <span className="absolute -bottom-0.5 left-0 w-[80%] h-[1px] group-hover:bg-gray-400 transition-all duration-400 group-hover:w-full"></span>
+                            </button>
+                        </Link>
                     ))}
                 </Slider>
             </div>

@@ -38,7 +38,7 @@ const Stats = () => {
                     <h1>Stats / Achievements</h1>
                 </div>
             }
-            <div className=" container flex flex-col items-center justify-center px-2 md:px-6 ">
+            <div className=" container flex flex-col items-center justify-center px-2 md:px-0 ">
                 {/* Heading */}
                 <div className=" w-full text-center md:text-start flex flex-col md:flex-row justify-center items-center gap-2 ">
                     <div className=" w-[100%] md:w-[50%] flex justify-center ">

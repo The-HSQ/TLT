@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import KnowledgeBase from '../components/KnowledgeBase';
+import Stats from '../components/Stats';
 
 const Features = () => {
   useEffect(() => {
@@ -9,7 +9,7 @@ const Features = () => {
   return (
     <>
       <div className=' mb-10 ' >
-        <KnowledgeBase />
+        <Stats />
       </div>
     </>
   )
