@@ -36,10 +36,10 @@ const BlogPodcast = () => {
                 {/* Blog Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-6 ">
                     {displayedPosts.map((card, index) => (
-                        <Link to={`/blog/${card.slug}`} key={index} className="border border-gray-400 hover:cursor-pointer group p-4 bg-white text-black rounded-2xl shadow-md transition-all transform hover:scale-101 hover:shadow-lg">
-                            <img src={card.image} alt={card.title} className=" mb-4 w-full h-48 md:h-60 object-cover " />
+                        <Link to={`/blog/${card.slug}`} key={index} className="border border-gray-300 hover:cursor-pointer group p-4 bg-white text-black rounded-2xl shadow-md transition-all transform hover:scale-101 hover:shadow-lg">
+                            <img src={card.image} alt={card.title} className=" mb-4 w-full object-cover " />
                             <h2 className="text-xl font-semibold">{card.title}</h2>
-                            <p className="text-gray-700 mt-2 text-ellipsis line-clamp-2">{card.description}</p>
+                            <p className="text-gray-700 mt-2 text-sm text-ellipsis line-clamp-2">{card.description}</p>
                             <button className="mt-4 relative text-gray-800 font-medium text-sm flex justify-center items-center gap-2 hover:cursor-pointer ">
                                 {card.linkText}
                                 <ArrowRight strokeWidth={1.9} size={19} className="transition-transform duration-400 group-hover:translate-x-2" />

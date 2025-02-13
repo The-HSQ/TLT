@@ -24,10 +24,10 @@ const UsageDetails = () => {
     }, [location.pathname]);
 
     return (
-        <div className=' flex justify-center ' >
+        <div className=' px-[1rem] md:px-[2rem] lg:px-[2.5rem] flex justify-center ' >
             {/* <div className="container flex flex-col gap-4 md:gap-6 items-center justify-center py-7 md:py-10 "> */}
             <div className=" custom-container flex flex-col gap-4 md:gap-6 items-center justify-center py-7 md:py-10 ">
-                <div className=" w-full lg:w-[70%] text-black px-3 flex gap-4 md:gap-6 flex-col justify-center items-start md:items-center ">
+                <div className=" w-full lg:w-[70%] text-black flex gap-4 md:gap-6 flex-col justify-center items-start md:items-center ">
                     {/* home and usage icons */}
                     <div className=' flex flex-wrap gap-3 justify-center items-center text-[#979591] '>
                         <Link to='/' >
@@ -73,7 +73,7 @@ const UsageDetails = () => {
                 {/* More usage */}
                 <div className="">
                     <h2 className=' text-center text-balance text-3xl font-medium ' >More from the TLT usage:</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2 pt-6 md:px-0">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-6 ">
                         {selectedCards.map((app, index) => (
                             <Link
                                 to={`/usage/${app.slug}`}

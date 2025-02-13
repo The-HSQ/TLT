@@ -54,27 +54,38 @@ const Stats = () => {
                 {/* Cards Desktop */}
                 <div className=" hidden sm:grid text-black mt-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {customerStories.map((story) => (
-                        <Link to={`/stats/${story.slug}`} key={story.id} className={` transition-all transform hover:scale-101 hover:${story.hoverColor} relative p-6 border border-gray-300 hover:cursor-pointer rounded-lg shadow-sm ${story.color} ${story.size === 'large' ? 'col-span-2' : 'col-span-1'}`}>
-                            {story.stat && <h3 className="text-3xl font-bold">{story.stat}</h3>}
-                            {story.desc && <p className="mt-2 text-gray-700">{story.desc}</p>}
-                            {story.company && <p className="mt-4 font-semibold">{story.company}</p>}
+                        <Link to={`/stats/${story.slug}`} key={story.id} className={` group flex justify-between items-center gap-4 transition-all duration-400 ${story && story.hoverColor} relative border p-4 border-gray-300 hover:cursor-pointer rounded-lg shadow-sm ${story.color} ${story.size === 'large' ? 'col-span-2' : 'col-span-1'}`}>
+                            {/* Left */}
                             {story.quote && (
-                                <div className="mt-4">
-                                    <p className="italic">"{story.quote}"</p>
-                                    <div className="flex items-center mt-4">
-                                        <img src={story.image} alt={story.name} className="w-12 h-12 object-cover rounded-full mr-3" />
-                                        <div>
-                                            <p className="font-bold">{story.name}</p>
-                                            <p className="text-gray-500 text-sm">{story.title}</p>
-                                        </div>
+                                <div className=" relative flex h-full w-[35%] ">
+                                    <div className=" w-full h-full overflow-hidden ">
+                                        <img src={story.image} alt={story.name} className="w-full h-54 transition-all duration-400 group-hover:scale-105 object-cover mr-3" />
+                                    </div>
+                                    <div className=' absolute bottom-0 left-0 p-2 bg-gradient-to-t from-black to-black/5    w-full h-auto ' >
+                                        <p className=" text-base text-white">{story.name}</p>
+                                        <p className="text-white text-base ">{story.title}</p>
                                     </div>
                                 </div>
                             )}
-                            <button className=' cursor-pointer absolute bottom-5 right-5 ' >
-                                <ArrowRight />
-                            </button>
+                            {/* Right */}
+                            <div className=" flex flex-col justify-between w-[65%] h-full ">
+                                <div className="">
+                                    {story.quote && <p className="italic text-xl ">"{story.quote}"</p>}
+                                    {story.stat && <h3 className="text-5xl font-medium">{story.stat}</h3>}
+                                    {story.desc && <p className="mt-2 text-gray-700 text-ellipsis line-clamp-2 ">{story.desc}</p>}
+                                </div>
+
+                                <div className=" w-full ">
+                                    {story.company && <p className="mt-4 w-full font-semibold">{story.company}</p>}
+                                    {!story.quote &&
+                                        <button className="cursor-pointer absolute bottom-5 right-5">
+                                            <ArrowRight size={26} className=" transition-transform duration-300 group-hover:scale-125" />
+                                        </button>}
+                                </div>
+                            </div>
                         </Link>
-                    ))}
+                    ))
+                    }
                 </div>
 
                 {/* Cards Mobile */}
