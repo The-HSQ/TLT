@@ -279,7 +279,8 @@ const Usage = () => {
                             <Link
                                 to={`/usage/${app.slug}`}
                                 key={index}
-                                className={` ${"min-w-["+ cardWidth+"px]"} group border border-gray-100 hover:cursor-pointer p-5 relative bg-[#F9F9F9] rounded-xl `}
+                                // className={` ${"min-w-["+ cardWidth+"px]"} group border border-gray-100 hover:cursor-pointer p-5 relative bg-[#F9F9F9] rounded-xl `}
+                                className={` min-w-[255px] sm:min-w-[360px] group border border-gray-100 hover:cursor-pointer p-5 relative bg-[#F9F9F9] rounded-xl `}
                             >
                                 <div className=" mb-3 w-full flex justify-between items-center ">
                                     <span className=" flex bg-[#D3E5F0] text-black px-2 py-2 rounded-full"><List strokeWidth={1.5} size={30} /></span>
