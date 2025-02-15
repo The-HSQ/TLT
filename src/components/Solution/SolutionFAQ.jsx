@@ -61,7 +61,7 @@ const SolutionFAQ = ({ bgColor, txtColor, bdColor, data }) => {
                                     <motion.div
                                         initial={{ height: 0, opacity: 0 }}
                                         animate={activeIndex === index ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
                                         className={` text-${txtColor} flex flex-col gap-6 `}>
                                         <p className=' text-base sm:text-lg ' >{item.description}</p>
                                         <button className=" text-base px-5 py-2 hover:cursor-pointer rounded border w-fit">

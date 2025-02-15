@@ -15,7 +15,6 @@ import { login, signup } from "../../features/authSlice";
 const Header = ({ btnTitle }) => {
   return (
     <header className="fixed top-0 left-0 bg-white z-[100000] w-full flex border-b border-gray-300 justify-center items-center px-[1rem] md:px-[2rem] lg:px-[2.5rem] py-4">
-      {/* <div className="container flex justify-between items-center"> */}
       <div className=" custom-container flex justify-between items-center">
         {/* Logo */}
         <Link to="/">
@@ -25,7 +24,7 @@ const Header = ({ btnTitle }) => {
         {/* Navigation Button */}
         <Link
           to={btnTitle === "Login" ? "/signup" : "/login"}
-          className="tracking-[1px] flex justify-center items-center gap-2 bg-btn text-white px-6 py-2 rounded-full transition font-semibold"
+          className="tracking-[1px] flex justify-center items-center gap-2 bg-btn text-white px-6 py-3 rounded-lg transition font-semibold"
         >
           {btnTitle === "Login" ? "Sign Up" : "Login"}
           <ArrowRight size={17} />
