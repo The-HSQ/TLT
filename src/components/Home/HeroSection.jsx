@@ -13,7 +13,7 @@ const HeroSection = () => {
 
     return (
         <main className="bg-gradient-to-b via-bgGradVia to-[#7E45DB] md:px-[2rem] lg:px-[2.5rem] flex flex-col items-center justify-start min-h-screen ">
-            <div className=" custom-container flex flex-col gap-6 items-center justify-center lg:py-32 2xl:py-46 ">
+            <div className=" custom-container flex flex-col gap-6 items-center justify-center py-26 lg:py-32 2xl:py-46 ">
                 <h1 className="md:tracking-[-3px] text-center text-balance text-[#262626] md:text-7xl xs:text-5xl text-4xl font-medium flex flex-col ">
                     The AI your
                     <span className=" text-balance ">
