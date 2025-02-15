@@ -14,7 +14,7 @@ const Layout = () => {
   return (
     <div>
       <Header />
-      <div className="pt-[73px]">
+      <div className=" pt-[69px] md:pt-[75px] ">
         <Outlet />
         <BeforeFooter />
         <Footer />

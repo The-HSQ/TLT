@@ -11,7 +11,7 @@ const Header = () => {
     const navItems = [
         { to: "/", label: "Home" },
         { to: "/solutions", label: "Solutions" },
-        { to: "/resources", label: "Resources" },
+        { to: "/company", label: "Company" },
         { to: "/pricing", label: "Pricing" },
     ];
 
@@ -31,6 +31,10 @@ const Header = () => {
         const token = localStorage.getItem("token");
         setIsAuthenticated(!!token);
     }, []);
+
+    useEffect(() => {
+        setIsOpen(false)
+    }, [location.pathname])
 
     const handleLogout = () => {
         localStorage.removeItem("token");

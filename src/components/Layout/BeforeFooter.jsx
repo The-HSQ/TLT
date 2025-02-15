@@ -6,7 +6,7 @@ const BeforeFooter = () => {
     return (
         <div className=' relative perspective-[1000px] bg-[#1C1C1C] flex flex-col justify-center overflow-hidden py-24 sm:py-36 ' >
             {/* Background Animated Grid - Positioned Properly */}
-            <div className=" absolute -top-10 -left-24 opacity-100 w-[120%] " style={{ transform: "rotateX(-50deg) rotateY(0deg) translateZ(50px)" }}>
+            <div className=" absolute -top-10 -left-18 opacity-100 w-[120%] " style={{ transform: "rotateX(-50deg) rotateY(0deg) translateZ(50px)" }}>
                 <AnimatedGrid />
             </div>
 

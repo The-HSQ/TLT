@@ -27,20 +27,9 @@ const Footer = () => {
                             </ul>
                         </div>
 
-                        {/* Resources */}
-                        <div className=' w-full flex flex-col gap-3 ' >
-                            <Link to='/resources' className=" group hover:cursor-pointer text-lg flex items-center gap-2 font-medium pb-3 mb-4 border-b border-gray-400">Resources <ArrowRight size={16} className='transition-transform duration-400 group-hover:translate-x-2' /> </Link>
-                            <ul className="space-y-2 text-[#A0A0A0] flex flex-col ">
-                                <Link to='/blog' className=' hover:text-white hover:cursor-pointer ' >Blog</Link>
-                                <Link to='#' className=' hover:text-white hover:cursor-pointer ' >Guides</Link>
-                                <Link to='#' className=' hover:text-white hover:cursor-pointer ' >APIs</Link>
-                                <Link to='#' className=' hover:text-white hover:cursor-pointer ' >FAQ</Link>
-                            </ul>
-                        </div>
-
                         {/* Company */}
                         <div className=' w-full flex flex-col gap-3 ' >
-                            <h3 className=" text-lg flex items-center gap-2 font-medium pb-3 mb-4 border-b border-gray-400">Company</h3>
+                            <Link to='/company' className=" text-lg flex items-center gap-2 font-medium pb-3 mb-4 border-b border-gray-400">Company <ArrowRight size={16} className='transition-transform duration-400 group-hover:translate-x-2' /> </Link>
                             <ul className="space-y-2 text-[#A0A0A0] flex flex-col ">
                                 <Link to='/' className='w-fit hover:text-white hover:cursor-pointer ' >Home</Link>
                                 <Link to='#' className='w-fit hover:text-white hover:cursor-pointer ' >Privacy Policy</Link>
@@ -48,7 +37,17 @@ const Footer = () => {
                                 <Link to='#' className='w-fit hover:text-white hover:cursor-pointer ' >Cookie Policy</Link>
                                 <Link to='#' className='w-fit hover:text-white hover:cursor-pointer ' >Contact Us</Link>
                             </ul>
+                        </div>
 
+                        {/* Resources */}
+                        <div className=' w-full flex flex-col gap-3 ' >
+                            <h3 className=" group hover:cursor-pointer text-lg flex items-center gap-2 font-medium pb-3 mb-4 border-b border-gray-400">Resources <ArrowRight size={16} className='transition-transform duration-400 group-hover:translate-x-2' /> </h3>
+                            <ul className="space-y-2 text-[#A0A0A0] flex flex-col ">
+                                <Link to='/blog' className=' hover:text-white hover:cursor-pointer ' >Blog</Link>
+                                <Link to='#' className=' hover:text-white hover:cursor-pointer ' >Guides</Link>
+                                <Link to='#' className=' hover:text-white hover:cursor-pointer ' >APIs</Link>
+                                <Link to='#' className=' hover:text-white hover:cursor-pointer ' >FAQ</Link>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -57,7 +56,7 @@ const Footer = () => {
                 {/* <div className=" w-[96%] h-[1px] bg-gray-400 "></div> */}
 
                 {/* Bottom Side */}
-                <div className=" flex flex-col 2md:flex-row gap-4 w-full py-16 ">
+                <div className=" flex flex-col 2md:flex-row gap-4 w-full py-5 2md:py-16 ">
                     {/* Right Side */}
                     <div className=" w-full md:w-[50%] flex justify-start items-center ">
                         <Link to='/' className=" cursor-pointer text-4xl md:text-6xl font-bold ">

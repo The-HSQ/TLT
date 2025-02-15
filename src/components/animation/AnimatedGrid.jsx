@@ -18,7 +18,7 @@ const AnimatedGrid = () => {
                 to top,
                 rgba(61, 42, 102, 1),
                 rgba(61, 42, 102, 1),
-                transparent 2px,
+                transparent 1px,
                 transparent 90px
               );
             }
@@ -29,7 +29,7 @@ const AnimatedGrid = () => {
                 to right,
                 rgba(61, 42, 102, 1),
                 rgba(61, 42, 102, 1),
-                transparent 2px,
+                transparent 1px,
                 transparent 90px
               );
             }
