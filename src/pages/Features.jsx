@@ -1,11 +1,7 @@
-import React, { useEffect } from 'react'
-import Stats from '../components/Stats';
+import React from 'react'
+import Stats from '../components/Home/Stats'
 
 const Features = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <>
       <div className=' mb-10 ' >

@@ -1,27 +1,26 @@
 import { Bold, ChevronDown, CircleCheck, CircleHelp, Ellipsis, EllipsisVertical, FileText, Home, Image, Italic, List, Logs, Megaphone, MessageCircle, Pen, Redo2, Shuffle, Star, Underline, Undo2 } from 'lucide-react'
 import React from 'react'
-import FloatingCardImage from './animation/FloatingCardImage'
-import FloatingCardLock from './animation/FloatingCardLock'
-import FloatingCardMegaPhone from './animation/FloatingCardMegaPhone'
-import FloatingCardGlobe from './animation/FloatingCardGlobe'
 import { Link } from 'react-router-dom'
 
 
 const BeforeFooterSection = () => {
     return (
-        // <div className=' container flex flex-col relative justify-center px-4 hover:cursor-default items-center ' >
         <div className=' custom-container flex flex-col relative justify-center px-[1rem] sm:px-[4rem] lg:px-[1rem] hover:cursor-default items-center ' >
-            <div className="absolute top-20 left-0 z-100 ">
-                <FloatingCardImage />
+            <div className=" floating absolute w-28 md:w-auto top-10 -right-10 z-100 ">
+                {/* <FloatingCardImage /> */}
+                <img src="./animation/icon-1.svg" alt="" />
             </div>
-            <div className="absolute bottom-20 right-0 z-100 ">
-                <FloatingCardLock />
+            <div className=" floating absolute bottom-10 w-30 md:w-auto -left-10 z-100 ">
+                {/* <FloatingCardLock /> */}
+                <img src="./animation/icon-2.svg" alt="" />
             </div>
-            <div className="absolute -top-10 md:-top-12 right-10 md:right-44 z-40 opacity-95 ">
-                <FloatingCardMegaPhone />
+            <div className=" floating absolute w-20 md:w-auto -top-14 md:-top-20 right-20 md:right-74 z-40 opacity-95 ">
+                {/* <FloatingCardMegaPhone /> */}
+                <img className=' w-30 ' src="./animation/icon-3.svg" alt="" />
             </div>
-            <div className="absolute rotate -bottom-14 z-40 opacity-95 ">
-                <FloatingCardGlobe />
+            <div className=" floating absolute w-20 md:w-auto rotate -bottom-18 z-40 opacity-95 ">
+                {/* <FloatingCardGlobe /> */}
+                <img className=' w-30 ' src="./animation/icon-4.svg" alt="" />
             </div>
 
             {/* Full Container */}

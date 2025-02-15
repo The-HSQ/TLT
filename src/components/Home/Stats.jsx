@@ -1,14 +1,13 @@
 import { ArrowRight, Box } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
-import customerStories from './api/stats.json';
+import customerStories from '../api/stats.json';
 
 const Stats = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const carouselRef = useRef(null);
     const location = useLocation();
     const stat = location.pathname === '/stats'
-    console.log(location.pathname)
 
     useEffect(() => {
         const interval = setInterval(() => {

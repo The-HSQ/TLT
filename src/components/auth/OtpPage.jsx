@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import { otpSchema } from "../schema/otpSchema";
+import { otpSchema } from "../../schema/otpSchema";
 import { AuthLayout, StylishInput } from "./AuthPages";
 import { verifyOtp } from "../../features/authSlice";
 

@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import HomePage from "./pages/HomePage";
 import { LoginPage, SignupPage } from "./components/auth/AuthPages";
 import { Toaster } from "react-hot-toast";
 import OtpPage from "./components/auth/OtpPage";
 import BlogDetailPage from "./pages/BlogDetailPage";
 import Blog from "./pages/Blog";
-import Layout from "./components/routes/Layout";
+import Layout from "./routes/Layout";
 import Features from "./pages/Features";
 import Resources from "./pages/Resources";
 import Demo from "./pages/Demo";
@@ -21,6 +21,7 @@ import Content from "./pages/Dashboard/Content";
 import Chat from "./pages/Dashboard/Chat";
 import KnowledgeBase from "./pages/Dashboard/KnowledgeBase";
 import VoiceOver from "./pages/Dashboard/VoiceOver";
+import SolutionPage from "./pages/SolutionPage";
 
 function App() {
   return (
@@ -35,10 +36,13 @@ function App() {
         <Route path="/demo" element={<Demo />} />
         {/* Routes Wrapped in Layout (Header & Footer) */}
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/solutions" element={<SolutionPage />} />
+          {/* <Route path="/pricing" element={<Resources />} /> */}
+
           <Route path="/blog" element={<Blog />} />
           <Route path="/features" element={<Features />} />
-          <Route path="/resources" element={<Resources />} />
           <Route path="/stats" element={<StatPage />} />
           <Route path="/usage" element={<UsagePage />} />
           <Route path="/blog/:slug" element={<BlogDetailPage />} />

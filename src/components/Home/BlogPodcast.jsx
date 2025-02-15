@@ -1,7 +1,7 @@
 import { ArrowRight, Box, ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import cards from './api/blog.json';
+import cards from './../api/blog.json';
 
 const BlogPodcast = () => {
     const location = useLocation();

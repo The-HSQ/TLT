@@ -2,13 +2,13 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-2md: 992px;
   --breakpoint-sb: 650px;
   --breakpoint-xs: 425px;
 
 
   --color-activePage: #6724C9;
   --color-btn: #6724C5;
-  /* --color-btnHover: #e48b17; */
   --color-txtGradFrom: #6F9CF2;
   --color-txtGradTo: #f6ba97;
   --color-bgGradVia: #FFD091;
@@ -22,15 +22,18 @@
   /* Usage */
   --color-STxtClr: #364153;
 
+  /* --bgGrid: url('/solutions/bgGrid.svg') */
+
 }
 
 @utility custom-container {
   width: 100%;
 
-  @media (width >= 88rem) {
-      max-width: 88rem;
+  @media (width >=88rem) {
+    max-width: 84rem;
   }
 }
+
 
 body {
   background: #FFFFFF;
@@ -42,17 +45,30 @@ body {
   display: none;
 }
 
-
-/* Usage Carosuel */
-.slick-track {
-  display: flex;
-  gap: 10px
+.MyGradient {
+  mask-image: linear-gradient(to right,
+      rgba(240, 240, 240, 0),
+      rgba(240, 240, 240, 1) 20%,
+      rgba(240, 240, 240, 1) 80%,
+      rgba(240, 240, 240, 0));
 }
 
-/* .custom-container {
-  width: 100%;
 
-  @media (width >= 88rem 1424px) {
-      max-width: 88rem 1424px;
+/* Animation Floating */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
   }
-} */
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}

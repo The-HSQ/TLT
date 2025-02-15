@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { motion } from "framer-motion";
-import { loginSchema } from "../schema/loginSchema";
-import { signupSchema } from "../schema/signupSchema";
+import { loginSchema } from "../../schema/loginSchema";
+import { signupSchema } from "../../schema/signupSchema";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Footer from "../Footer";
+import Footer from "../Layout/Footer";
 import { ArrowRight } from "lucide-react";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
@@ -25,7 +25,7 @@ const Header = ({ btnTitle }) => {
         {/* Navigation Button */}
         <Link
           to={btnTitle === "Login" ? "/signup" : "/login"}
-          className="tracking-[1px] flex justify-center items-center gap-2 bg-btn text-white px-6 py-2 rounded-full transition hover:bg-btnHover font-semibold"
+          className="tracking-[1px] flex justify-center items-center gap-2 bg-btn text-white px-6 py-2 rounded-full transition font-semibold"
         >
           {btnTitle === "Login" ? "Sign Up" : "Login"}
           <ArrowRight size={17} />
