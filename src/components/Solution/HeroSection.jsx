@@ -3,10 +3,10 @@ import AnimatedGrid from '../animation/AnimatedGrid'
 
 const HeroSection = () => {
     return (
-        <div className=' overflow-x-hidden flex flex-col justify-center items-center gap-4 py-16 w-full h-full perspective-[1000px] ' >
-            <div className=' custom-container z-[1000] flex flex-col 2md:flex-row gap-10 md:gap-5 justify-center items-center px-[1rem] sm:px-[2rem] lg:px-[2.5rem] ' >
+        <div className=' overflow-x-hidden flex flex-col justify-center items-center gap-4 py-16 w-full h-full perspective-[1000px] px-[1rem] sm:px-[2rem] lg:px-[2.5rem] ' >
+            <div className=' custom-container z-[1000] flex flex-col 2md:flex-row gap-10 md:gap-5 justify-center items-center ' >
                 {/* Left */}
-                <div className=" w-[100%] sm:w-[50%] md:w-[80%] lg:w-[50%] flex flex-col items-center 2md:items-start justify-center gap-4 ">
+                <div className=" w-[100%] sm:w-[50%] md:w-[80%] lg:w-[50%] flex flex-col items-center 2md:items-start justify-center gap-4 2md:gap-7 ">
                     <h1 className=' text-5xl md:text-7xl font-medium text-[#262627] text-center 2md:text-start text-balance ' >AI solutions for every kind of marketer</h1>
                     <div className=" flex gap-4 ">
                         <button className=' border text-sm bg-transparent p-4 rounded-md ' >Start Free Trial</button>
@@ -14,10 +14,10 @@ const HeroSection = () => {
                     </div>
                 </div>
                 {/* Right */}
-                <div className=" flex justify-center 2md:justify-start relative w-[90%] 2md:w-[50%] h-auto 2md:h-[358px] perspective-dramatic ">
+                <div className=" flex justify-center 2md:justify-start relative w-[90%] 2md:w-[50%] h-auto perspective-dramatic ">
                     {/* Main image */}
                     <div className=" relative w-[100%] md:[50%] h-auto ">
-                        <img className=' rounded-xl w-[full] ' src="./solutions/solutions_img.avif" alt="solution" />
+                        <img className=' -mb-10 md:md-0 rounded-xl w-[full] ' src="./solutions/solutions_img.avif" alt="solution" />
 
                         {/* icon 1 */}
                         <div className=" absolute top-10 -right-3 z-[2] w-16 h-16 sm:w-22 sm:h-22 lg:w-26 lg:h-26 floating ">
