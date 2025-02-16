@@ -152,7 +152,7 @@ const Header = () => {
             {/* Scroll Progress Bar */}
             {location.pathname !== "/" && (
                 <div
-                    className="fixed top-[69px] md:top-[75px] left-0 w-full h-1 bg-[#6724C5] "
+                    className="fixed top-[66.4px] md:top-[72.4px] left-0 w-full h-1 bg-[#6724C5] "
                     style={{ width: `${scrollWidth}%` }}
                 ></div>
             )}
